@@ -13,8 +13,8 @@ router.get(
 router.post(
   '/team',
   (request, response, next) => Team
-    .create()
-    .then(oke => response.status(201).send(oke))
+    .create(request.body)
+    .then(team => response.status(201).send(team))
     .catch(next)
 )
 
