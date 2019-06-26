@@ -1,8 +1,14 @@
 const Sequelize = require("sequelize")
 const db = require('../db')
 
-class Team {
-  constructor() {
-
+const Team = db.difine(
+  'team',
+  {
+    name: {
+      type: Sequelize.STRING,
+      field: 'team_name'
+    }
   }
-}
+)
+
+module.exports = Team;
