@@ -10,5 +10,12 @@ router.get(
     .then(teams => response.send(teams))
     .catch(next)
 )
+router.post(
+  '/team',
+  (request, response, next) => Team
+    .create(request.body)
+    .then(team => response.status(201).send(team))
+    .catch(next)
+)
 
 module.exports = router
