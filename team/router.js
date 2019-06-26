@@ -13,7 +13,7 @@ router.get(
 router.get(
   '/team/:id',
   (request, response, next) => Team
-    .findByPk()
+    .findByPk(request.params.id)
     .then(team => response.send(team))
     .catch(next)
 )
