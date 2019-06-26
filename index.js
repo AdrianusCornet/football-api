@@ -10,4 +10,5 @@ const app = express()
 const jsonParser = bodyParser.json()
 
 app.listen(port, () => console.log(`Listening on :${port}`))
+app.use(jsonParser)
 app.use(teamRouter)
