@@ -7,21 +7,21 @@ router.get(
   '/team',
   (request, response, next) => Team
     .findAll()
-    .then(teams => response.send(teams))
+    .then(teams => response.send({ teams }))
     .catch(next)
 )
 router.get(
   '/team/:id',
   (request, response, next) => Team
     .findByPk(request.params.id)
-    .then(team => response.send(team))
+    .then(team => response.send({ team }))
     .catch(next)
 )
 router.post(
   '/team',
   (request, response, next) => Team
     .create(request.body)
-    .then(team => response.status(201).send(team))
+    .then(team => response.status(201).send({ team }))
     .catch(next)
 )
 router.put(
@@ -29,7 +29,7 @@ router.put(
   (request, response, next) => Team
     .findByPk(request.params.id)
     .then(team => team.update(request.body))
-    .then(updatedTeam => response.send(updatedTeam))
+    .then(updatedTeam => response.send({ updatedTeam }))
     .catch(next)
 )
 
