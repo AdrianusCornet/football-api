@@ -17,5 +17,12 @@ router.get(
     .then(player => response.send({ player }))
     .catch(next)
 )
+router.post(
+  '/player',
+  (request, response, next) => Player
+    .create(request.body)
+    .then(player => response.status(201).send({ player }))
+    .catch(next)
+)
 
 module.exports = router
