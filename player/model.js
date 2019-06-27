@@ -15,3 +15,5 @@ const Player = db.define(
   },
   { tableName: 'football_player' }
 )
+
+module.exports = Player
