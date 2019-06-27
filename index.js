@@ -6,6 +6,7 @@ const team = require('./team/model')
 const teamRouter = require('./team/router')
 // player
 const player = require('./player/model')
+const playerRouter = require('./player/router')
 
 const port = process.env.PORT || 4000
 
@@ -15,3 +16,4 @@ const jsonParser = bodyParser.json()
 app.listen(port, () => console.log(`Listening on :${port}`))
 app.use(jsonParser)
 app.use(teamRouter)
+app.use(playerRouter)
