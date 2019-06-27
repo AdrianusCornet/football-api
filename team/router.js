@@ -24,5 +24,13 @@ router.post(
     .then(team => response.status(201).send(team))
     .catch(next)
 )
+router.put(
+  '/team/:id',
+  (request, response, next) => Team
+    .findByPk(request.params.id)
+    .then(team => team.update(request.body))
+    .then(updatedTeam => response.send(updatedTeam))
+    .catch(next)
+)
 
 module.exports = router
